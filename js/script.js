@@ -16,9 +16,42 @@ $("#shoot").click(function(){
     $("#userChoice").text(userChoice);
     randomNumber = Math.random();
     if(randomNumber < .33){
-        computerChoice = "rock"; 
+        computerChoice = "rock" ; 
     }
-    else if(randomNumber > .33 && randomNumber < .66)
-        computerChoice = "paper";
+    else if(randomNumber > .33 && randomNumber < .66){
+        computerChoice = "paper" ;
+    }
+    else {
+        computerChoice = "scissors" ;
+    }
+    $("#computerChoice").text(computerChoice);
+
+
+    if (computerChoice === userChoice){
+    alert("Draw");
+    }
+
+    else if (computerChoice === "rock" && userChoice === "paper"){
+    alert("You Win!");
+    }
+
+    else if (computerChoice === "paper" && userChoice === "scissors"){
+    alert("You Win!");
+    }
+
+    else if (computerChoice === "scissors" && userChoice === "rock"){
+    alert("You Win!");
+    }
+
+    else if (computerChoice === "rock" && userChoice === "scissors"){
+    alert("You Lose!");
+    }
+
+    else if (computerChoice === "paper" && userChoice === "rock"){
+    alert("You Lose!");
+    }
+
+    else if (computerChoice === "scissors" && userChoice === "paper"){
+    alert("You Lose!");
     }
 });
