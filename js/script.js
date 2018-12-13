@@ -1,57 +1,50 @@
-// *************************** YOUR CODE BELOW *******************************
-//******************TEST EARLY AND OFTEN USING console.log() ******************
-//****************** SERIOUSLY TEST USING console.log()!!! ******************
+// *** YOUR CODE BELOW ***
+//**TEST EARLY AND OFTEN USING console.log() **
+//** SERIOUSLY TEST USING console.log()!!! **
 
 //GLOBAL VARIABLES
 /* global $ */
 var userChoice = "";
-var computerChoice = "";
+var computerChoice = ""; 
 var winner = "";
 var randomNumber = 0;
 
 // DOCUMENT READY FUNCTION BELOW
 
 $("#shoot").click(function(){
-    var userChoice = $("#imput").val();
+    var userChoice = $("#input").val();
     $("#userChoice").text(userChoice);
     randomNumber = Math.random();
     if(randomNumber < .33){
-        computerChoice = "rock" ; 
+        computerChoice = "rock";
     }
     else if(randomNumber > .33 && randomNumber < .66){
-        computerChoice = "paper" ;
+        computerChoice = "paper";
     }
     else {
-        computerChoice = "scissors" ;
+        computerChoice = "scissors";
     }
     $("#computerChoice").text(computerChoice);
-
-
-    if (computerChoice === userChoice){
-    alert("Draw");
+    
+    if (userChoice === computerChoice) {
+        alert ("draw!");
     }
-
-    else if (computerChoice === "rock" && userChoice === "paper"){
-    alert("You Win!");
+    else if(userChoice === "rock" && computerChoice === "paper"){
+        alert ("You lose!")
     }
-
-    else if (computerChoice === "paper" && userChoice === "scissors"){
-    alert("You Win!");
+    else if(userChoice === "rock" && computerChoice === "scissors"){
+        alert ("You win!")
     }
-
-    else if (computerChoice === "scissors" && userChoice === "rock"){
-    alert("You Win!");
+    else if(userChoice === "paper" && computerChoice === "scissors"){
+        alert ("You lose!")
     }
-
-    else if (computerChoice === "rock" && userChoice === "scissors"){
-    alert("You Lose!");
+    else if(userChoice === "paper" && computerChoice === "rock"){
+        alert ("You win!")
     }
-
-    else if (computerChoice === "paper" && userChoice === "rock"){
-    alert("You Lose!");
+    else if(userChoice === "scissors" && computerChoice === "rock"){
+        alert ("You lose!")
     }
-
-    else if (computerChoice === "scissors" && userChoice === "paper"){
-    alert("You Lose!");
+    else if(userChoice === "scissors" && computerChoice === "paper"){
+        alert ("You win!")
     }
 });
